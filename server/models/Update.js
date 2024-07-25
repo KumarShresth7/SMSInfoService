@@ -15,4 +15,4 @@ const UpdateSchema = {
     }
 }
 
-module.exports = UpdateSchema
+module.exports = mongoose.model('Update',UpdateSchema)
