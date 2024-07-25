@@ -1,12 +1,19 @@
 const twilio = require('twilio')
-const translate = require('translate')
 require('dotenv').config()
 
 const client = twilio(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_AUTH_TOKEN)
 
 const sendSMS = async (to, message, language) => {
     if (language !== 'en') {
-        message = await translate(message, { to: language });
+    const translate = await import('translate');
+    translate.engine = 'google'; // assuming you are using Google Translate API
+    translate.key = process.env.GOOGLE_API_KEY;
+
+    const translatedMessage = await translate(message, language);
+
+    // Your SMS sending logic here
+    // Use your preferred SMS gateway API to send the message
+    console.log(`Sending SMS to ${phoneNumber}: ${translatedMessage}`);
     }
 
     client.messages.create({
