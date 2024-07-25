@@ -15,5 +15,6 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((err)=>console.log(err))
 
 app.use('/api/users',require('./routes/userRouter'))
+app.use('/api/updates',require('./routes/updateRouter'))
 
 app.listen(PORT,()=>console.log(`Server running on port ${PORT}`))
