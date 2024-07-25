@@ -2,9 +2,10 @@
 import React from 'react';
 import ServiceCard from './ServiceCard'; // Import the ServiceCard component
 
+
 const Services = () => {
   return (
-    <section id="services" className="py-16 bg-gray-100">
+    <section id="services" className="py-16 bg-gray-100 flex">
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold mb-6 text-center">Our Services</h2>
         <div className="flex flex-col lg:flex-row justify-center">
