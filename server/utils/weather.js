@@ -9,3 +9,5 @@ const getWeather = async(location)=>{
         console.error('Error fetching weather data ',error)
     }
 }
+
+module.exports = {getWeather}
