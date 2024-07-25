@@ -12,7 +12,8 @@ const sendSMS = async (to, message, language) => {
     client.messages.create({
         body: message,
         from: process.env.TWILIO_PHONE_NUMBER,
-        to:'+916283760168'
+        // to:'+916283760168'
+        to
     }).then(message => console.log(`Message sent to ${to}: ${message.sid}`))
     .catch(error => console.error(error));
 };
