@@ -1,3 +1,9 @@
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
 .service-card::before {
   content: "";
   position: absolute;
@@ -5,7 +11,11 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: rgb(165 180 252);
+  background: linear-gradient(
+    to right,
+    #4f46e5,
+    #696ce5
+  ); /* Adjusted gradient for better contrast */
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
@@ -19,4 +29,12 @@
 .service-card > .relative {
   position: relative;
   z-index: 1;
+}
+
+.service-card img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover img {
+  opacity: 1;
 }

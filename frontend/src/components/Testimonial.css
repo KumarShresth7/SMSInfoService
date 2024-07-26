@@ -1,0 +1,40 @@
+/* Testimonial.css */
+
+/* Style the container for the carousel */
+.slick-slider {
+  position: relative;
+  width: 100%;
+}
+
+.slick-track {
+  display: flex;
+}
+
+.slick-slide {
+  display: flex;
+  justify-content: center; /* Center the slide */
+}
+
+.slick-dots {
+  bottom: -30px; /* Adjust positioning of dots */
+}
+
+.slick-dots li button:before {
+  font-size: 12px;
+  color: #4f46e5; /* Use indigo-700 for dots */
+}
+
+.slick-dots li.slick-active button:before {
+  color: #6366f1; /* Use indigo-500 for active dot */
+}
+
+.slick-prev,
+.slick-next {
+  z-index: 1;
+  color: #4f46e5; /* Use indigo-700 for arrows */
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  color: #6366f1; /* Use indigo-500 on hover */
+}

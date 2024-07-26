@@ -1,0 +1,34 @@
+#about {
+  background: linear-gradient(
+    to right,
+    #ebf4ff,
+    #ffffff
+  ); /* Light background gradient to complement the theme */
+}
+
+#about h2,
+#about h3,
+#about h4 {
+  color: #4f46e5; /* Indigo color for headings to match the theme */
+}
+
+#about p {
+  color: #4a5568; /* Darker gray for text to maintain readability and match the theme */
+  margin-bottom: 1.5rem;
+}
+
+#about img {
+  border: 3px solid #4f46e5; /* Indigo border to match the theme */
+}
+
+#about .team-member {
+  text-align: center;
+}
+
+#about .team-member img {
+  width: 6rem;
+  height: 6rem;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
