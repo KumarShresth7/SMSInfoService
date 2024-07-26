@@ -4,19 +4,19 @@ import json
 
 def get_bbc_news_headlines(country):
     try:
-        url = f"https://www.hindustantimes.com/cities/{country}-news"
+        url = f"https://www.bbc.com/news/world/asia/{country}"
         response = requests.get(url)
         response.raise_for_status()
 
         soup = BeautifulSoup(response.content, 'html.parser')
         headlines = []
 
-        for item in soup.select('a'):
+        for item in soup.select('.zTZri '):
             title = item.get_text(strip=True)
             link = item.find_parent('a')['href']
             headlines.append({
                 'title': title,
-                'url': link if link.startswith('http') else f"https://www.hindustantimes.com{link}",
+                'url': link if link.startswith('http') else f"https://www.bbc.com{link}",
             })
 
         return json.dumps(headlines)  # Return as JSON string
