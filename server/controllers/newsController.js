@@ -1,5 +1,4 @@
 const path = require('path');
-const { getStateNewsHeadlines } = require('../utils/newsScraper');
 const { spawn } = require('child_process');
 
 const pythonScriptPath = path.join('D://Projects//Hackathon//SMSInfoService//python','news_scraper.py')
