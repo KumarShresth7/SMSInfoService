@@ -15,6 +15,7 @@ const About = () => {
             <p className="text-lg text-gray-700 leading-relaxed">
               At NotifyGenie, we are dedicated to keeping you informed with the latest and most relevant updates in healthcare, weather, and public services. Our journey began with a vision to create a reliable source of information that empowers individuals and communities.
             </p>
+            //This is just for test
           </div>
           <div className="lg:w-1/2 lg:pl-12">
             <img src={teamPhoto} alt="Our Team" className="rounded-lg shadow-lg" />
