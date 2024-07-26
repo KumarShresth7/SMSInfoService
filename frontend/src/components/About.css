@@ -1,34 +1,42 @@
-#about {
-  background: linear-gradient(
-    to right,
-    #ebf4ff,
-    #ffffff
-  ); /* Light background gradient to complement the theme */
+/* About.css */
+.section-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #4f46e5; /* Indigo-600 */
 }
 
-#about h2,
-#about h3,
-#about h4 {
-  color: #4f46e5; /* Indigo color for headings to match the theme */
+.section-subtitle {
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #6b7280; /* Gray-700 */
 }
 
-#about p {
-  color: #4a5568; /* Darker gray for text to maintain readability and match the theme */
-  margin-bottom: 1.5rem;
+.section-content {
+  margin-bottom: 4rem;
 }
 
-#about img {
-  border: 3px solid #4f46e5; /* Indigo border to match the theme */
-}
-
-#about .team-member {
+.team-member {
   text-align: center;
 }
 
-#about .team-member img {
+.team-member img {
+  border-radius: 9999px; /* Fully rounded */
   width: 6rem;
   height: 6rem;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 1rem;
+}
+
+.team-member h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4f46e5; /* Indigo-700 */
+  margin-top: 1rem;
+}
+
+.team-member p {
+  color: #6b7280; /* Gray-600 */
 }

@@ -1,7 +1,7 @@
 .service-card {
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 
 .service-card::before {
