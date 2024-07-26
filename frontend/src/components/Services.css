@@ -1,0 +1,58 @@
+#services {
+  background: linear-gradient(
+    to right,
+    #f0f4f8,
+    #e5e7f6
+  ); /* Light gradient for subtle visual appeal */
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  background-color: #ffffff;
+}
+
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to right,
+    #4f46e5,
+    #6d28d9
+  ); /* Gradient matching hero section */
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+  z-index: 0;
+}
+
+h2 {
+  color: #1f2937; /* Dark text for better readability */
+}
+
+.service-card h3,
+.service-card p {
+  color: #1f2937; /* Consistent text color */
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card > .relative {
+  position: relative;
+  z-index: 1;
+}
+
+.service-card img {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.service-card:hover img {
+  opacity: 1;
+}

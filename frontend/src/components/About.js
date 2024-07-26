@@ -1,16 +1,82 @@
-// src/components/About.js
 import React from 'react';
+import teamPhoto from '../assets/team.jpg'; // Make sure to replace with the actual path to your team photo
+import './About.css'; // Add this for custom styles
 
 const About = () => {
-    return (
-      <section id="about" className="py-16">
-        <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-6">About Us</h2>
-          {/* Add your about details here */}
+  return (
+    <section id="about" className="py-16 bg-gray-50">
+      <div className="container mx-auto px-6 lg:px-16">
+        <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">About Us</h2>
+
+        {/* Company Overview */}
+        <div className="flex flex-col lg:flex-row items-center mb-12">
+          <div className="lg:w-1/2 mb-8 lg:mb-0">
+            <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Our Story</h3>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              At NotifyGenie, we are dedicated to keeping you informed with the latest and most relevant updates in healthcare, weather, and public services. Our journey began with a vision to create a reliable source of information that empowers individuals and communities.
+            </p>
+          </div>
+          <div className="lg:w-1/2 lg:pl-12">
+            <img src={teamPhoto} alt="Our Team" className="rounded-lg shadow-lg" />
+          </div>
         </div>
-      </section>
-    );
-  };
-  
+
+        {/* Mission Statement */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Our Mission</h3>
+          <p className="text-lg text-gray-700 leading-relaxed">
+            Our mission is to provide timely, accurate, and actionable updates that help our users stay informed and make better decisions. We strive to deliver information that is essential, trustworthy, and easy to access.
+          </p>
+        </div>
+
+        {/* Team Introduction */}
+        <div className="text-center mb-12">
+          <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Meet Our Team</h3>
+          <div className="flex flex-wrap justify-center">
+            {/* Team Member */}
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+                <h4 className="text-xl font-semibold text-indigo-700">Shresth</h4>
+                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+              </div>
+            </div>
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+                <h4 className="text-xl font-semibold text-indigo-700">Ananya</h4>
+                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+              </div>
+            </div>
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+                <h4 className="text-xl font-semibold text-indigo-700">Rachit</h4>
+                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+              </div>
+            </div>
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
+                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+                <h4 className="text-xl font-semibold text-indigo-700">Vedant</h4>
+                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+              </div>
+            </div>
+            {/* Add more team members here */}
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="text-center">
+          <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Join Us</h3>
+          <p className="text-lg text-gray-700 leading-relaxed mb-4">
+            Interested in joining our team or learning more about what we do? Reach out to us and let's make a difference together!
+          </p>
+          <button className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Contact Us</button>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default About;
