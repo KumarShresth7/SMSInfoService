@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import teamPhoto from '../assets/team.jpg'; // Make sure to replace with the actual path to your team photo
 import './About.css'; // Add this for custom styles
+import shresth from '../assets/shresth.png';
+import rachit from '../assets/rachit.png';
+import ananya from '../assets/ananya.jpeg';
+import vedant from '../assets/vedant.jpeg';
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: 'ease-in-out',
+      once: false
+    });
+  }, []);
+
   return (
-    <section id="about" className="py-16 bg-gray-50">
+    <section id="about" className="py-16 bg-gray-50 bg-about-pattern diagonal-stripes">
       <div className="container mx-auto px-6 lg:px-16">
         <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">About Us</h2>
 
@@ -30,39 +45,38 @@ const About = () => {
         </div>
 
         {/* Team Introduction */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-12" data-aos="fade-up">
           <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Meet Our Team</h3>
           <div className="flex flex-wrap justify-center">
             {/* Team Member */}
-            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="100">
+              <div className="bg-white p-6 rounded-lg shadow-lg team-member">
+                <img src={shresth} alt="Shresth" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Shresth</h4>
-                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+                <p className="text-gray-600">Description for Shresth.</p>
               </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="200">
+              <div className="bg-white p-6 rounded-lg shadow-lg team-member">
+                <img src={ananya} alt="Ananya" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Ananya</h4>
-                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+                <p className="text-gray-600">Description for Ananya.</p>
               </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="300">
+              <div className="bg-white p-6 rounded-lg shadow-lg team-member">
+                <img src={rachit} alt="Rachit" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Rachit</h4>
-                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+                <p className="text-gray-600">Description for Rachit.</p>
               </div>
             </div>
-            <div className="w-full sm:w-1/2 lg:w-1/4 p-4">
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <img src="https://via.placeholder.com/150" alt="Team Member" className="w-24 h-24 mx-auto rounded-full mb-4" />
+            <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="400">
+              <div className="bg-white p-6 rounded-lg shadow-lg team-member">
+                <img src={vedant} alt="Vedant" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Vedant</h4>
-                <p className="text-gray-600">{/*idhar apni-apni description laga denge */}</p>
+                <p className="text-gray-600">Description for Vedant.</p>
               </div>
             </div>
-            {/* Add more team members here */}
           </div>
         </div>
 

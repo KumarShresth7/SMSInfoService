@@ -12,6 +12,23 @@
   align-items: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   text-align: center; /* Center text inside card */
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-card::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 4px; /* Height of the colored line */
+  background-color: #4f46e5; /* Color of the line (can be adjusted) */
+  transition: width 0.3s ease-in-out; /* Smooth transition for the line width */
+}
+
+.subscribe-card:hover::after {
+  width: 100%; /* Expand the line to the full width of the card on hover */
 }
 
 .subscribe-card:hover {

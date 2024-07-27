@@ -9,6 +9,7 @@ import Subscribe from './components/Subscribe';
 import Testimonial from './components/Testimonial';
 import Contact from './components/Contact';
 import Footer from './components/Footer'; // Import the Footer component
+import CombinedDivider from './components/CombinedDivider';
 
 const App = () => {
   return (
@@ -16,12 +17,17 @@ const App = () => {
       <div className="App">
         <Navbar />
         <Hero />
+
         <Services />
+
         <About />
+
         <Subscribe />
+        <CombinedDivider />
         <Testimonial />
+        <CombinedDivider />
         <Contact />
-        <Footer /> {/* Add Footer component here */}
+        <Footer />
       </div>
     </Router>
   );

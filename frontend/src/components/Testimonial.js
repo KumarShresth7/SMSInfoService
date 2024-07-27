@@ -1,10 +1,20 @@
-// src/components/Testimonial.js
-import React from 'react';
+import React, { useEffect } from 'react';
 import TestCard from './TestCard'; // Import the TestCard component
 import Slider from 'react-slick';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Testimonial.css';
 
 const Testimonial = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      offset: 100,
+      easing: 'ease-in-out',
+      once: false,
+    });
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -14,32 +24,54 @@ const Testimonial = () => {
     autoplay: true,
     autoplaySpeed: 3000,
     centerMode: true,
-    centerPadding: '1rem',
+    centerPadding: '0',  // No extra padding for centering
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerPadding: '10px',  // Adjust padding for responsiveness
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '10px',  // Adjust padding for smaller screens
+        },
+      },
+    ],
   };
 
   return (
-    <section id="testimonial" className="py-16 bg-gray-100">
+    <section id="testimonial" className="py-16 bg-gradient-to-r from-indigo-100 to-indigo-200">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-6 text-center">What Our Clients Say</h2>
+        <h2 className="text-4xl font-bold mb-8 text-center text-indigo-700">What Our Clients Say</h2>
         <div className="flex flex-col lg:flex-row justify-center">
           <Slider {...settings}>
             {/* Testimonial Cards */}
-            <TestCard
-              testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
-              name="ABC"
-              title="XYZ"
-            />
-            <TestCard
-              testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
-              name="ABC"
-              title="XYZ"
-            />
-            <TestCard
-              testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
-              name="ABC"
-              title="XYZ"
-            />
+            <div data-aos="fade-up">
+              <TestCard
+                testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
+                name="ABC"
+                title="XYZ"
+              />
+            </div>
+            <div data-aos="fade-up">
+              <TestCard
+                testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
+                name="ABC"
+                title="XYZ"
+              />
+            </div>
+            <div data-aos="fade-up">
+              <TestCard
+                testimonial='"Lorem ipsum odor amet, consectetuer adipiscing elit. Facilisi nullam placerat, lacinia quisque porta aenean habitant."'
+                name="ABC"
+                title="XYZ"
+              />
+            </div>
           </Slider>
         </div>
       </div>

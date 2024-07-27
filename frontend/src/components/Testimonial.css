@@ -12,7 +12,9 @@
 
 .slick-slide {
   display: flex;
-  justify-content: center; /* Center the slide */
+  justify-content: space-evenly; /* Center the slide content */
+  align-items: center;
+  margin: 0 5px; /* Adjust margin for proper spacing between slides */
 }
 
 .slick-dots {
@@ -37,4 +39,34 @@
 .slick-prev:hover,
 .slick-next:hover {
   color: #6366f1; /* Use indigo-500 on hover */
+}
+
+/* TestCard styling */
+.test-card {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 300px; /* Adjust as needed */
+  width: 100%;
+  height: 300px; /* Fixed height to ensure all cards are equal */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center; /* Center text inside card */
+}
+
+.test-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.test-card p {
+  margin-bottom: 1rem;
+}
+
+.test-card h3 {
+  margin-bottom: 0.5rem;
 }
