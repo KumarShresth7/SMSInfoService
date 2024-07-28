@@ -1,36 +1,48 @@
-// src/App.js
-import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/NavBar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Subscribe from './components/Subscribe';
-import Testimonial from './components/Testimonial';
-import Contact from './components/Contact';
-import Footer from './components/Footer'; // Import the Footer component
-import CombinedDivider from './components/CombinedDivider';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
+
+const ScrollToSection = ({ scrollTo }) => {
+  useEffect(() => {
+    if (scrollTo) {
+      const { scroller } = require('react-scroll');
+      scroller.scrollTo(scrollTo, {
+        duration: 500,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+      });
+    }
+  }, [scrollTo]);
+
+  return null;
+};
 
 const App = () => {
+  const location = useLocation();
+  const { state } = location;
+
   return (
-    <Router>
-      <div className="App">
-        <Navbar />
-        <Hero />
-
-        <Services />
-
-        <About />
-
-        <Subscribe />
-        <CombinedDivider />
-        <Testimonial />
-        <CombinedDivider />
-        <Contact />
-        <Footer />
-      </div>
-    </Router>
+    <div className="App">
+      <Navbar />
+      <ScrollToSection scrollTo={state?.scrollTo} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
+      <Footer />
+    </div>
   );
 };
 
-export default App;
+const AppWrapper = () => (
+  <Router>
+    <App />
+  </Router>
+);
+
+export default AppWrapper;
