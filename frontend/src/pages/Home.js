@@ -3,6 +3,7 @@ import Hero from '../components/Hero';
 import About from '../components/About';
 import Services from '../components/Services';
 import Subscribe from '../components/Subscribe';
+import CombinedDivider from '../components/CombinedDivider';
 import Testimonials from '../components/Testimonial';
 import Contact from '../components/Contact';
 
@@ -13,7 +14,9 @@ const Home = () => {
       <About />
       <Services />
       <Subscribe />
+      <CombinedDivider/>
       <Testimonials />
+      <CombinedDivider/>
       <Contact />
     </div>
   );

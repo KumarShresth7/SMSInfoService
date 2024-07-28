@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { scroller } from 'react-scroll';
 import teamPhoto from '../assets/team.jpg'; // Make sure to replace with the actual path to your team photo
 import './About.css'; // Add this for custom styles
 import shresth from '../assets/shresth.png';
@@ -17,6 +18,14 @@ const About = () => {
       once: false
     });
   }, []);
+
+  const handleContactUsClick = () => {
+    scroller.scrollTo('contact', {
+      duration: 1500, // Adjust duration for smoother scrolling
+      delay: 0,
+      smooth: 'easeInOutQuart',
+    });
+  };
 
   return (
     <section id="about" className="py-16 bg-gray-50 bg-about-pattern diagonal-stripes">
@@ -86,7 +95,12 @@ const About = () => {
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
             Interested in joining our team or learning more about what we do? Reach out to us and let's make a difference together!
           </p>
-          <button className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600">Contact Us</button>
+          <button 
+            className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600"
+            onClick={handleContactUsClick}
+          >
+            Contact Us
+          </button>
         </div>
       </div>
     </section>
