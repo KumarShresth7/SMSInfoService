@@ -11,7 +11,7 @@ const Footer = () => {
           <p className="text-lg">“The best way to predict the future is to create it.”</p>
         </div>
         <div className="text-center mb-6 lg:mb-0">
-          <p className="text-lg mb-4">&copy; 2024 YourSite. All rights reserved.</p>
+          <p className="text-lg mb-4">&copy; 2024 NotifyGenie. All rights reserved.</p>
           <div className="mb-6">
             <a href="#about" className="mx-4 hover:underline text-lg">About</a>
             <a href="#services" className="mx-4 hover:underline text-lg">Services</a>
@@ -33,7 +33,7 @@ const Footer = () => {
               <FaLinkedin size={24} />
             </a>
           </div>
-          <p className="text-sm">Made with ❤️ by YourSite</p>
+          <p className="text-sm">Made with ❤️ by NotifyGenie</p>
         </div>
       </div>
     </footer>

@@ -1,0 +1,110 @@
+/* Contact.css */
+
+/* Container Styling */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Contact Details Styling */
+.contact-details {
+  text-align: left;
+}
+
+.contact-details .flex {
+  align-items: center;
+}
+
+.contact-details .text-2xl {
+  color: #4f46e5;
+}
+
+.contact-details p {
+  color: #374151;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.375rem;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #6366f1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .lg\:w-1\/2 {
+    width: 100% !important; /* Full width on smaller screens */
+  }
+
+  .lg\:space-x-16 {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+  }
+
+  .lg\:mb-0 {
+    margin-bottom: 2rem; /* Add space between stacked elements */
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}
+
+/* Animation Styling */
+[data-aos="fade-right"] {
+  transform: translateX(-100px);
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+[data-aos="fade-right"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+[data-aos="fade-left"] {
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s ease-in-out;
+}
+
+[data-aos="fade-left"].aos-animate {
+  transform: translateX(0);
+  opacity: 1;
+}
