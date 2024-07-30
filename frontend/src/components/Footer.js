@@ -6,18 +6,18 @@ const Footer = () => {
   return (
     <footer className="bg-indigo-600 text-white py-8">
       <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
-        <div className="flex items-center mb-6 lg:mb-0">
-          <img src={logo} alt="YourSite Logo" className="w-36 h-auto mr-6" />
+        <div className="flex flex-col lg:flex-row items-center mb-6 lg:mb-0 text-center lg:text-left">
+          <img src={logo} alt="YourSite Logo" className="w-36 h-auto mr-0 lg:mr-6 mb-4 lg:mb-0" />
           <p className="text-lg">“The best way to predict the future is to create it.”</p>
         </div>
         <div className="text-center mb-6 lg:mb-0">
           <p className="text-lg mb-4">&copy; 2024 NotifyGenie. All rights reserved.</p>
-          <div className="mb-6">
-            <a href="#about" className="mx-4 hover:underline text-lg">About</a>
-            <a href="#services" className="mx-4 hover:underline text-lg">Services</a>
-            <a href="#subscribe" className="mx-4 hover:underline text-lg">Subscribe</a>
-            <a href="#testimonial" className="mx-4 hover:underline text-lg">Testimonials</a>
-            <a href="#contact" className="mx-4 hover:underline text-lg">Contact</a>
+          <div className="mb-6 flex flex-wrap justify-center hidden lg:flex"> {/* Hidden on mobile */}
+            <a href="#about" className="mx-2 lg:mx-4 hover:underline text-lg">About</a>
+            <a href="#services" className="mx-2 lg:mx-4 hover:underline text-lg">Services</a>
+            <a href="#subscribe" className="mx-2 lg:mx-4 hover:underline text-lg">Subscribe</a>
+            <a href="#testimonial" className="mx-2 lg:mx-4 hover:underline text-lg">Testimonials</a>
+            <a href="#contact" className="mx-2 lg:mx-4 hover:underline text-lg">Contact</a>
           </div>
           <div className="flex justify-center space-x-6 mb-6">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">

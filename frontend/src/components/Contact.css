@@ -92,6 +92,23 @@
   .text-center {
     text-align: center;
   }
+
+  .contact-form {
+    width: 50%; /* Adjust form width to prevent overflow */
+    max-width: 200px; /* Set max-width for better control */
+    padding: 1rem; /* Reduce padding on smaller screens */
+    box-shadow: none; /* Remove box-shadow for a cleaner look */
+    margin: 0 0; /* Center the form */
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.75rem; /* Adjust padding for input fields */
+  }
+
+  .contact-form button {
+    padding: 0.75rem; /* Adjust padding for button */
+  }
 }
 
 /* Animation Styling */

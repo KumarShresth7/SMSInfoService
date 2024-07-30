@@ -115,20 +115,45 @@ const Testimonial = () => {
     rtl: true,
   };
 
+  const settings4 = {
+    dots: false,
+    infinite: true,
+    speed: 4000,
+    slidesToShow: 1,  // Display one slide at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000, // Adjust speed if necessary
+    vertical: false,  // Horizontal scroll for mobile view
+    arrows: false,
+    rows: 1,
+    cssEase: 'linear',
+    pauseOnHover: false,
+  };
+
+  // Determine the screen size
+  const isMobile = window.innerWidth <= 768;
+
   return (
     <section id="testimonial" className="testimonial-section py-16 bg-gradient-to-r from-indigo-100 to-indigo-200 overflow-hidden">
       <div className="container mx-auto text-center relative">
         <h2 className="text-4xl font-bold mb-8 text-indigo-700">What Our Clients Say</h2>
         <div className="testimonial-slider-container relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
-            <Carousel testimonials={testimonials} settings={settings1} />
-          </div>
-          <div className="absolute top-0 left-1/3 w-full h-full overflow-hidden">
-            <Carousel testimonials={testimonials.slice().reverse()} settings={settings3} />
-          </div>
-          <div className="absolute top-0 left-2/3 w-full h-full overflow-hidden">
-            <Carousel testimonials={testimonials} settings={settings2} />
-          </div>
+          {!isMobile && (
+            <>
+              <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+                <Carousel testimonials={testimonials} settings={settings1} />
+              </div>
+              <div className="absolute top-0 left-1/3 w-full h-full overflow-hidden">
+                <Carousel testimonials={testimonials.slice().reverse()} settings={settings3} />
+              </div>
+              <div className="absolute top-0 left-2/3 w-full h-full overflow-hidden">
+                <Carousel testimonials={testimonials} settings={settings2} />
+              </div>
+            </>
+          )}
+          {isMobile && (
+            <Carousel testimonials={testimonials} settings={settings4} />
+          )}
         </div>
       </div>
     </section>
