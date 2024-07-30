@@ -10,4 +10,6 @@ const getWeather = async(location)=>{
     }
 }
 
+
+
 module.exports = {getWeather}
