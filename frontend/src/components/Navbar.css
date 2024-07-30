@@ -1,5 +1,19 @@
-/* Navbar.css or global CSS */
-@keyframes fade-in {
+/* Navbar.css */
+.navbar {
+  background: linear-gradient(to right, #4f46e5, #312e81);
+  color: white;
+  overflow: hidden; /* Prevents overflow */
+}
+
+.animate-fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.animate-slide-in {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -8,7 +22,7 @@
   }
 }
 
-@keyframes slide-in {
+@keyframes slideIn {
   from {
     transform: translateX(100%);
   }
@@ -17,10 +31,57 @@
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 1s ease-in-out;
+h1 .text-notify {
+  font-weight: 800; /* Make the text bolder */
+  color: white; /* Keep the original color for Notify */
 }
 
-.animate-slide-in {
-  animation: slide-in 0.5s ease-in-out;
+h1 .text-genie {
+  font-weight: 900; /* Make the text bolder */
+  background: linear-gradient(
+    to right,
+    #c084fc,
+    #8b5cf6
+  ); /* Brighter gradient */
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent; /* Standard property for compatibility */
+  transition: transform 0.3s ease-in-out;
+}
+
+h1 .text-genie:hover {
+  transform: scale(1.1); /* Scale effect on hover */
+}
+
+.navbar a {
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover {
+  background: linear-gradient(
+    to right,
+    #c084fc,
+    #8b5cf6
+  ); /* Brighter gradient on hover */
+  -webkit-background-clip: text;
+  background-clip: text; /* Standard property for compatibility */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent; /* Standard property for compatibility */
+}
+
+@media (max-width: 825px) {
+  .navbar .hidden.md\\:flex {
+    display: none;
+  }
+  .navbar .md\\:hidden {
+    display: flex;
+  }
+}
+
+@media (min-width: 826px) {
+  .navbar .md\\:hidden {
+    display: none;
+  }
 }

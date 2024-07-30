@@ -18,15 +18,18 @@ const Contact = () => {
           <div data-aos="fade-right" className="contact-details mb-12 lg:mb-0">
             <div className="flex items-center mb-6">
               <FaMapMarkerAlt className="text-indigo-700 text-2xl mr-4" />
-              <p className="text-lg text-gray-700">123 Your Address, City, Country</p>
+              <p className="text-lg text-gray-700">
+                P.O. Box 32, Bhadson Road, Patiala, Punjab, Pin -147004, India
+                <span className="address-line">(Thapar Institute of Engineering and Technology)</span>
+              </p>
             </div>
             <div className="flex items-center mb-6">
               <FaPhone className="text-indigo-700 text-2xl mr-4" />
-              <p className="text-lg text-gray-700">+123 456 7890</p>
+              <p className="text-lg text-gray-700">+91 62837 60168</p>
             </div>
             <div className="flex items-center mb-6">
               <FaEnvelope className="text-indigo-700 text-2xl mr-4" />
-              <p className="text-lg text-gray-700">contact@yourdomain.com</p>
+              <p className="text-lg text-gray-700">contact@notifygenie.com</p>
             </div>
           </div>
           {/* Contact Form */}

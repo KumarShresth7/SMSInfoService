@@ -1,4 +1,3 @@
-// src/components/Login.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -23,9 +22,9 @@ const Login = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 mt-20">
-      <div className="max-w-md w-full space-y-8 p-12 bg-white rounded-xl shadow-md">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">Login</h2>
+    <section className="min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 to-indigo-200 py-16 px-4 sm:px-6 lg:px-8 mt-20">
+      <div className="max-w-md w-full space-y-8 p-12 bg-white rounded-xl shadow-lg transform transition-all hover:scale-105">
+        <h2 className="text-center text-3xl font-extrabold text-indigo-700">Login to Your Account</h2>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             {/* Email */}
@@ -37,7 +36,7 @@ const Login = () => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -51,7 +50,7 @@ const Login = () => {
                 id="password"
                 value={formData.password}
                 onChange={handleChange}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm transition duration-150 ease-in-out"
                 required
               />
             </div>
@@ -60,7 +59,7 @@ const Login = () => {
             <div>
               <button
                 type="submit"
-                className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 transition duration-150 ease-in-out"
               >
                 Login
               </button>
@@ -68,7 +67,7 @@ const Login = () => {
           </div>
         </form>
         <p className="mt-6 text-center text-gray-600">
-          Don't have an account? <Link to="/register" className="text-indigo-600 hover:text-indigo-500">Create a new account</Link>
+          Don't have an account? <Link to="/register" className="text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out">Create a new account</Link>
         </p>
       </div>
     </section>
