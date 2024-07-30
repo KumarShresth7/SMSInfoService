@@ -62,28 +62,28 @@ const About = () => {
               <div className="bg-white p-6 rounded-lg shadow-lg team-member">
                 <img src={shresth} alt="Shresth" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Shresth</h4>
-                <p className="text-gray-600">Description for Shresth.</p>
+                <p className="text-gray-600">3rd Year COE student at TIET</p>
               </div>
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="200">
               <div className="bg-white p-6 rounded-lg shadow-lg team-member">
                 <img src={ananya} alt="Ananya" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Ananya</h4>
-                <p className="text-gray-600">Description for Ananya.</p>
+                <p className="text-gray-600">3rd Year COE student at TIET</p>
               </div>
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="300">
               <div className="bg-white p-6 rounded-lg shadow-lg team-member">
                 <img src={rachit} alt="Rachit" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Rachit</h4>
-                <p className="text-gray-600">Description for Rachit.</p>
+                <p className="text-gray-600">3rd Year COE student at TIET</p>
               </div>
             </div>
             <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="400">
               <div className="bg-white p-6 rounded-lg shadow-lg team-member">
                 <img src={vedant} alt="Vedant" className="w-24 h-24 mx-auto rounded-full mb-4" />
                 <h4 className="text-xl font-semibold text-indigo-700">Vedant</h4>
-                <p className="text-gray-600">Description for Vedant.</p>
+                <p className="text-gray-600">3rd Year COE student at TIET</p>
               </div>
             </div>
           </div>
@@ -95,7 +95,7 @@ const About = () => {
           <p className="text-lg text-gray-700 leading-relaxed mb-4">
             Interested in joining our team or learning more about what we do? Reach out to us and let's make a difference together!
           </p>
-          <button 
+          <button
             className="bg-indigo-500 text-white py-2 px-4 rounded hover:bg-indigo-600"
             onClick={handleContactUsClick}
           >

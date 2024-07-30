@@ -24,6 +24,14 @@
   color: #374151;
 }
 
+.contact-details p {
+  display: inline;
+}
+
+.address-line {
+  display: block;
+}
+
 /* Contact Form Styling */
 .contact-form {
   background-color: #ffffff;

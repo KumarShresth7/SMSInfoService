@@ -1,72 +1,80 @@
-/* Testimonial.css */
-
-/* Style the container for the carousel */
-.slick-slider {
+.testimonial-section {
+  background: linear-gradient(to right, #ebeff5, #d4d7e8);
   position: relative;
-  width: 100%;
+  overflow: hidden;
 }
 
-.slick-track {
-  display: flex;
+.testimonial-slider-container {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
 }
 
-.slick-slide {
+.testimonial-slider {
+  position: absolute;
+  height: 100%;
+}
+
+.testimonial-card-wrapper {
   display: flex;
-  justify-content: space-evenly; /* Center the slide content */
+  justify-content: space-evenly;
   align-items: center;
-  margin: 0 5px; /* Adjust margin for proper spacing between slides */
+  height: 100%;
+  overflow: hidden;
 }
 
-.slick-dots {
-  bottom: -30px; /* Adjust positioning of dots */
-}
-
-.slick-dots li button:before {
-  font-size: 12px;
-  color: #4f46e5; /* Use indigo-700 for dots */
-}
-
-.slick-dots li.slick-active button:before {
-  color: #6366f1; /* Use indigo-500 for active dot */
-}
-
-.slick-prev,
-.slick-next {
-  z-index: 1;
-  color: #4f46e5; /* Use indigo-700 for arrows */
-}
-
-.slick-prev:hover,
-.slick-next:hover {
-  color: #6366f1; /* Use indigo-500 on hover */
-}
-
-/* TestCard styling */
-.test-card {
-  background-color: white;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 300px; /* Adjust as needed */
-  width: 100%;
-  height: 300px; /* Fixed height to ensure all cards are equal */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.testimonial-card {
+  position: relative;
+  width: 300px; /* card ki width yahan se increase/decrease karenege */
+  height: 350px;
+  margin: 10px; /* space yahan se kam karenge*/
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center; /* Center text inside card */
+  text-align: center;
+  opacity: 0.8;
 }
 
-.test-card:hover {
+.testimonial-card-wrapper:nth-child(odd) .testimonial-card {
+  transform: scale(0.9);
+}
+
+.testimonial-card-wrapper:nth-child(even) .testimonial-card {
+  transform: scale(1.1);
+}
+
+.testimonial-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-.test-card p {
+.testimonial-card img {
+  border: 4px solid #6366f1;
+  transition: border 0.3s ease-in-out;
+}
+
+.testimonial-card img:hover {
+  border-color: #4f46e5;
+}
+
+.testimonial-icon {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.testimonial-card p {
   margin-bottom: 1rem;
+  color: #4f46e5;
 }
 
-.test-card h3 {
+.testimonial-card h3 {
   margin-bottom: 0.5rem;
+}
+
+.testimonial-card .text-lg {
+  color: #4f46e5;
 }

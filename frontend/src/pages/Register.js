@@ -40,17 +40,21 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add form submission logic here
+    // form ka submission logic, idhar add karna haii
     console.log(formData);
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center bg-gray-100 py-16 px-4 sm:px-6 lg:px-8 mt-20">
-      <div className="max-w-4xl w-full space-y-8 p-12 bg-white rounded-xl shadow-md">
-        <h2 className="text-center text-3xl font-extrabold text-gray-900">Register</h2>
+    <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-indigo-100 to-indigo-200 py-16 px-4 sm:px-6 lg:px-8 pt-32">
+      <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-r from-indigo-500 to-indigo-800 z-0"></div>
+      <div className="relative z-1 max-w-4xl w-full space-y-8 p-12 bg-white rounded-xl shadow-lg">
+        <h2 className="text-center text-3xl font-extrabold text-indigo-700">Register</h2>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
-            {/* Name */}
+
+            {/* columns add and remove honge abhi after kal ki meet */}
+
+            {/* Name Column */}
             <div>
               <label htmlFor="name" className="block text-gray-700">Name</label>
               <input
@@ -63,8 +67,8 @@ const Register = () => {
                 required
               />
             </div>
-            
-            {/* Phone Number */}
+
+            {/* Phone Number  */}
             <div>
               <label htmlFor="phoneNumber" className="block text-gray-700">Phone Number</label>
               <input
@@ -77,7 +81,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             {/* Permanent Address */}
             <div>
               <label htmlFor="address" className="block text-gray-700">Permanent Address</label>
@@ -91,7 +95,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             {/* Pin Code */}
             <div>
               <label htmlFor="pinCode" className="block text-gray-700">Pin Code</label>
@@ -105,7 +109,7 @@ const Register = () => {
                 required
               />
             </div>
-            
+
             {/* Categories */}
             <fieldset>
               <legend className="block text-gray-700">Categories</legend>
@@ -120,30 +124,30 @@ const Register = () => {
                   />
                   <span className="ml-2 text-gray-700">Healthcare</span>
                 </label>
-                <label className="inline-flex items-center">
+                <label className="inline-flex items-center ">
                   <input
                     type="checkbox"
                     name="weather"
                     checked={formData.categories.weather}
                     onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600"
+                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
                   />
                   <span className="ml-2 text-gray-700">Weather</span>
                 </label>
-                <label className="inline-flex items-center">
+                <label className="inline-flex items-center ">
                   <input
                     type="checkbox"
                     name="publicServices"
                     checked={formData.categories.publicServices}
                     onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600"
+                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
                   />
                   <span className="ml-2 text-gray-700">Public Services</span>
                 </label>
               </div>
             </fieldset>
-            
-            {/* Language */}
+
+            {/* Language decide karke, yahan change karenge */}
             <fieldset>
               <legend className="block text-gray-700">Language</legend>
               <div className="space-y-2 mt-2">
@@ -165,9 +169,9 @@ const Register = () => {
                     value="spanish"
                     checked={formData.language === 'spanish'}
                     onChange={handleChange}
-                    className="form-radio h-5 w-5 text-indigo-600"
+                    className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
-                  <span className="ml-2 text-gray-700">Spanish</span>
+                  <span className="ml-2 text-gray-700">Hindi</span>
                 </label>
                 <label className="inline-flex items-center">
                   <input
@@ -176,13 +180,13 @@ const Register = () => {
                     value="french"
                     checked={formData.language === 'french'}
                     onChange={handleChange}
-                    className="form-radio h-5 w-5 text-indigo-600"
+                    className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
-                  <span className="ml-2 text-gray-700">French</span>
+                  <span className="ml-2 text-gray-700">Punjabi</span>
                 </label>
               </div>
             </fieldset>
-            
+
             {/* Submit Button */}
             <div>
               <button
@@ -202,4 +206,4 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Register;
