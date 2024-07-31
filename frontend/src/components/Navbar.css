@@ -1,8 +1,13 @@
-/* Navbar.css */
 .navbar {
-  background: linear-gradient(to right, #4f46e5, #312e81);
+  background: transparent; /* Default transparent background */
   color: white;
   overflow: hidden; /* Prevents overflow */
+  transition: background 0.5s ease-in-out; /* Smooth transition for background change */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
 }
 
 .animate-fade-in {
@@ -73,16 +78,16 @@ h1 .text-genie:hover {
 }
 
 @media (max-width: 825px) {
-  .navbar .hidden.md\\:flex {
+  .navbar .hidden.md\:flex {
     display: none;
   }
-  .navbar .md\\:hidden {
+  .navbar .md\:hidden {
     display: flex;
   }
 }
 
 @media (min-width: 826px) {
-  .navbar .md\\:hidden {
+  .navbar .md\:hidden {
     display: none;
   }
 }

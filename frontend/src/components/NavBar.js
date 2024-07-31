@@ -1,16 +1,36 @@
-import React, { useState } from 'react';
-import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
-import { Link as Scroll, scroller } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { scroller } from 'react-scroll';
 import original from "../assets/original.png";
 import './Navbar.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   const location = useLocation();
   const navigate = useNavigate();
   const isLandingPage = location.pathname === '/';
+
+  useEffect(() => {
+    // GSAP animation for background color change on scroll
+    gsap.to(".navbar", {
+      background: "linear-gradient(to right, #4f46e5, #312e81)",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".navbar",
+        start: "top top",
+        end: "bottom top",
+        scrub: 1,
+        markers: false,
+        toggleActions: "play none none reverse", // Optional
+      },
+    });
+  }, []);
+
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   const handleNavClick = (section) => {
     if (!isLandingPage) {
@@ -26,7 +46,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar fixed z-10 top-0 left-0 w-full bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-4 px-6 lg:px-16 shadow-lg transition-shadow duration-300 ease-in-out">
+    <nav className="navbar fixed w-full text-white py-4 px-6 lg:px-16 shadow-lg transition-shadow duration-300 ease-in-out">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center animate-fade-in">
           <img src={original} alt="Logo" className="h-12 mr-4 transition-transform transform hover:scale-110" />
@@ -97,7 +117,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu idhar se start hai*/}
+      {/* Mobile menu */}
       <div className={`md:hidden fixed inset-0 bg-gray-800 bg-opacity-90 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-20`}>
         <div className="flex justify-end p-6">
           <button onClick={toggleMenu} className="text-white text-2xl">
