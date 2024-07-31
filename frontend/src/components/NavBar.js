@@ -21,8 +21,8 @@ const Navbar = () => {
       duration: 0.5,
       scrollTrigger: {
         trigger: ".navbar",
-        start: "top top",
-        end: "bottom top",
+        start: "top -15%",
+        end: "top -16%",
         scrub: 1,
         markers: false,
         toggleActions: "play none none reverse", // Optional

@@ -8,6 +8,10 @@ import shresth from '../assets/shresth.png';
 import rachit from '../assets/rachit.png';
 import ananya from '../assets/ananya.jpeg';
 import vedant from '../assets/vedant.jpeg';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
   useEffect(() => {
