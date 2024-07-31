@@ -167,7 +167,7 @@ const Register = () => {
                     type="radio"
                     name="language"
                     value="spanish"
-                    checked={formData.language === 'spanish'}
+                    checked={formData.language === 'hindi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
@@ -178,7 +178,7 @@ const Register = () => {
                     type="radio"
                     name="language"
                     value="french"
-                    checked={formData.language === 'french'}
+                    checked={formData.language === 'punjabi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
