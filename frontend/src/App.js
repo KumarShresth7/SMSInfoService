@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/NavBar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Loader from './components/OurLoader';
 
 const ScrollToSection = ({ scrollTo }) => {
   useEffect(() => {
@@ -24,6 +25,17 @@ const ScrollToSection = ({ scrollTo }) => {
 const App = () => {
   const location = useLocation();
   const { state } = location;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoading(false);
+    }, 3000);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="App">

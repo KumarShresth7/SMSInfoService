@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ai from "../assets/ai.jpg";
 import './Hero.css';  // Ensure the path to your CSS file is correct
 
 const Hero = () => {
