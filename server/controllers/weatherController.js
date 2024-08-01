@@ -1,15 +1,15 @@
 const express = require("express");
 const { getWeather } = require("../utils/weather");
-const { translateText } = require("../controllers/translateController");
 const { sendSMS } = require("../utils/sms");
 const User = require("../models/User");
 require('dotenv').config();
 
 const sendWeatherUpdate = async (req, res) => {
   try {
-    const { location, targetLang } = req.body;
-    if (!location || !targetLang) {
-      return res.status(400).json({ error: "Location and target language are required" });
+    const { location } = req.body;
+
+    if (!location) {
+      return res.status(400).json({ error: "Location is required" });
     }
 
     const weatherData = await getWeather(location);
@@ -18,11 +18,15 @@ const sendWeatherUpdate = async (req, res) => {
     }
 
     const weatherDescription = weatherData.weather[0].description;
-    const translatedWeatherDescription = await translateText(weatherDescription, targetLang);
+    const temperature = Math.round(weatherData.main.temp - 273);
 
-    const message = `Weather Update for ${location}: ${translatedWeatherDescription}. Temperature: ${weatherData.main.temp}°C.`;
+    const message = `Weather Update for ${location}: ${weatherDescription}. Temperature: ${temperature}°C.`;
 
     const users = await User.find({ services: "weather" });
+    if (users.length === 0) {
+      return res.status(404).json({ message: "No users subscribed to weather updates" });
+    }
+
     users.forEach((user) => {
       sendSMS(user.phoneNumber, message);
     });
