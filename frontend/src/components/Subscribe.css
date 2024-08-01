@@ -3,15 +3,15 @@
   padding: 1.5rem;
   border-radius: 0.5rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 300px; /* Adjust as needed */
+  max-width: 300px;
   width: 100%;
-  height: 300px; /* Fixed height to ensure all cards are equal */
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-align: center; /* Center text inside card */
+  text-align: center;
   position: relative;
   overflow: hidden;
 }
@@ -22,13 +22,13 @@
   bottom: 0;
   left: 0;
   width: 0;
-  height: 4px; /* Height of the colored line */
-  background-color: #4f46e5; /* Color of the line (can be adjusted) */
-  transition: width 0.3s ease-in-out; /* Smooth transition for the line width */
+  height: 4px;
+  background-color: #4f46e5;
+  transition: width 0.3s ease-in-out;
 }
 
 .subscribe-card:hover::after {
-  width: 100%; /* Expand the line to the full width of the card on hover */
+  width: 100%;
 }
 
 .subscribe-card:hover {

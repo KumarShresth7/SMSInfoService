@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,11 +8,12 @@ const Register = () => {
     address: '',
     pinCode: '',
     categories: {
-      news: false,
-      weather: false,
       horoscope: false,
+      weather: false,
+      news: false,
     },
-    language: 'en',
+    zodiacSign: '',
+    language: 'english',
   });
 
   const handleChange = (e) => {
@@ -39,22 +39,9 @@ const Register = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const services = Object.keys(formData.categories).filter(
-        (category) => formData.categories[category]
-      );
-      const response = await axios.post('http://localhost:5000/api/users/subscribe', {
-        ...formData,
-        services,
-      });
-      console.log(response.data);
-      // Handle successful registration (e.g., display a success message or redirect)
-    } catch (error) {
-      console.error('Failed to register user:', error);
-      // Handle registration error (e.g., display an error message)
-    }
+    console.log(formData);
   };
 
   return (
@@ -65,7 +52,6 @@ const Register = () => {
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
 
-            {/* Name Column */}
             <div>
               <label htmlFor="name" className="block text-gray-700">Name</label>
               <input
@@ -79,7 +65,6 @@ const Register = () => {
               />
             </div>
 
-            {/* Phone Number  */}
             <div>
               <label htmlFor="phoneNumber" className="block text-gray-700">Phone Number</label>
               <input
@@ -93,7 +78,6 @@ const Register = () => {
               />
             </div>
 
-            {/* Permanent Address */}
             <div>
               <label htmlFor="address" className="block text-gray-700">Permanent Address</label>
               <input
@@ -107,7 +91,6 @@ const Register = () => {
               />
             </div>
 
-            {/* Pin Code */}
             <div>
               <label htmlFor="pinCode" className="block text-gray-700">Pin Code</label>
               <input
@@ -121,10 +104,29 @@ const Register = () => {
               />
             </div>
 
-            {/* Categories */}
             <fieldset>
               <legend className="block text-gray-700">Categories</legend>
-              <div className="space-y-2 mt-2">
+              <div className="space-y-2 mt-2 flex flex-col sm:flex-row sm:space-x-4">
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    name="horoscope"
+                    checked={formData.categories.horoscope}
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 text-indigo-600"
+                  />
+                  <span className="ml-2 text-gray-700">Horoscope</span>
+                </label>
+                <label className="inline-flex items-center">
+                  <input
+                    type="checkbox"
+                    name="weather"
+                    checked={formData.categories.weather}
+                    onChange={handleChange}
+                    className="form-checkbox h-5 w-5 text-indigo-600"
+                  />
+                  <span className="ml-2 text-gray-700">Weather</span>
+                </label>
                 <label className="inline-flex items-center">
                   <input
                     type="checkbox"
@@ -135,30 +137,22 @@ const Register = () => {
                   />
                   <span className="ml-2 text-gray-700">News</span>
                 </label>
-                <label className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    name="weather"
-                    checked={formData.categories.weather}
-                    onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
-                  />
-                  <span className="ml-2 text-gray-700">Weather</span>
-                </label>
-                <label className="inline-flex items-center">
-                  <input
-                    type="checkbox"
-                    name="horoscope"
-                    checked={formData.categories.horoscope}
-                    onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
-                  />
-                  <span className="ml-2 text-gray-700">Horoscope</span>
-                </label>
               </div>
+              {formData.categories.horoscope && (
+                <div className="mt-4">
+                  <label htmlFor="zodiacSign" className="block text-gray-700">Zodiac Sign</label>
+                  <input
+                    type="text"
+                    name="zodiacSign"
+                    id="zodiacSign"
+                    value={formData.zodiacSign}
+                    onChange={handleChange}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  />
+                </div>
+              )}
             </fieldset>
 
-            {/* Language */}
             <fieldset>
               <legend className="block text-gray-700">Language</legend>
               <div className="space-y-2 mt-2">
@@ -166,8 +160,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="en"
-                    checked={formData.language === 'en'}
+                    value="english"
+                    checked={formData.language === 'english'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600"
                   />
@@ -177,8 +171,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="hi"
-                    checked={formData.language === 'hi'}
+                    value="hindi"
+                    checked={formData.language === 'hindi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
@@ -188,8 +182,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="pun"
-                    checked={formData.language === 'pun'}
+                    value="punjabi"
+                    checked={formData.language === 'punjabi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
@@ -198,7 +192,6 @@ const Register = () => {
               </div>
             </fieldset>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"

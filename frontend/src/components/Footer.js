@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa'; // Import icons
-import logo from '../assets/original.png'; // Import your logo image
+import { FaInstagram, FaLinkedin } from 'react-icons/fa';
+import logo from '../assets/original.png';
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         </div>
         <div className="text-center mb-6 lg:mb-0">
           <p className="text-lg mb-4">&copy; 2024 NotifyGenie. All rights reserved.</p>
-          <div className="mb-6 flex flex-wrap justify-center hidden lg:flex"> {/* Hidden on mobile */}
+          <div className="mb-6 flex flex-wrap justify-center hidden lg:flex">
             <a href="#about" className="mx-2 lg:mx-4 hover:underline text-lg">About</a>
             <a href="#services" className="mx-2 lg:mx-4 hover:underline text-lg">Services</a>
             <a href="#subscribe" className="mx-2 lg:mx-4 hover:underline text-lg">Subscribe</a>
@@ -20,17 +20,11 @@ const Footer = () => {
             <a href="#contact" className="mx-2 lg:mx-4 hover:underline text-lg">Contact</a>
           </div>
           <div className="flex justify-center space-x-6 mb-6">
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
-              <FaFacebook size={24} />
+            <a href="https://www.instagram.com/k.shresth_?igsh=aGY0czI3Ynk1Y3dr" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200" aria-label="Visit our Instagram page">
+              <FaInstagram size={24} alt="Instagram" />
             </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
-              <FaTwitter size={24} />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
-              <FaInstagram size={24} />
-            </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
-              <FaLinkedin size={24} />
+            <a href="https://www.linkedin.com/in/kumar-shresth-3a743b171" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200" aria-label="Visit our LinkedIn page">
+              <FaLinkedin size={24} alt="Linkedin" />
             </a>
           </div>
           <p className="text-sm">Made with ❤️ by NotifyGenie</p>

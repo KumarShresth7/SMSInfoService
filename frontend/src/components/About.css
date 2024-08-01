@@ -4,10 +4,9 @@
   font-weight: bold;
   margin-bottom: 1rem;
   text-align: center;
-  color: #4f46e5; /* Indigo-600 */
+  color: #4f46e5;
 }
 
-/* Example CSS for Diagonal Stripes */
 .diagonal-stripes {
   background: linear-gradient(
     45deg,
@@ -19,7 +18,7 @@
     transparent 75%,
     transparent
   );
-  background-size: 40px 40px; /* Adjust size as needed */
+  background-size: 40px 40px;
 }
 
 .section-subtitle {
@@ -27,7 +26,7 @@
   font-weight: normal;
   margin-bottom: 2rem;
   text-align: center;
-  color: #6b7280; /* Gray-700 */
+  color: #6b7280;
 }
 
 .section-content {
@@ -39,7 +38,7 @@
 }
 
 .team-member img {
-  border-radius: 9999px; /* Fully rounded */
+  border-radius: 9999px;
   width: 6rem;
   height: 6rem;
   object-fit: cover;
@@ -48,10 +47,10 @@
 .team-member h4 {
   font-size: 1.25rem;
   font-weight: bold;
-  color: #4f46e5; /* Indigo-700 */
+  color: #4f46e5;
   margin-top: 1rem;
 }
 
 .team-member p {
-  color: #6b7280; /* Gray-600 */
+  color: #6b7280;
 }

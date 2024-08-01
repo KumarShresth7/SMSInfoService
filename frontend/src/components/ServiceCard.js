@@ -5,7 +5,7 @@ import './ServiceCard.css';
 const ServiceCard = ({ serviceName, serviceDescription, imageUrl }) => {
   const { ref, inView } = useInView({
     threshold: 0,
-    triggerOnce: false, // Remove triggerOnce to allow multiple triggers
+    triggerOnce: false,
   });
 
   return (

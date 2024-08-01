@@ -29,10 +29,10 @@ const steps = [
 const Subscribe = () => {
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration in milliseconds
-      offset: 100, // Offset value to trigger animations
-      easing: 'ease-in-out', // Easing function for animations
-      once: false // Animation should happen only once while scrolling down
+      duration: 800,
+      offset: 100,
+      easing: 'ease-in-out',
+      once: false
     });
   }, []);
 

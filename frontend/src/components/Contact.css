@@ -1,13 +1,9 @@
-/* Contact.css */
-
-/* Container Styling */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* Contact Details Styling */
 .contact-details {
   text-align: left;
 }
@@ -32,7 +28,6 @@
   display: block;
 }
 
-/* Contact Form Styling */
 .contact-form {
   background-color: #ffffff;
   padding: 2rem;
@@ -74,19 +69,18 @@
   background-color: #6366f1;
 }
 
-/* Responsive Design */
 @media (max-width: 1024px) {
   .lg\:w-1\/2 {
-    width: 100% !important; /* Full width on smaller screens */
+    width: 100% !important;
   }
 
   .lg\:space-x-16 {
-    flex-direction: column; /* Stack elements vertically on smaller screens */
+    flex-direction: column;
     align-items: center;
   }
 
   .lg\:mb-0 {
-    margin-bottom: 2rem; /* Add space between stacked elements */
+    margin-bottom: 2rem;
   }
 
   .text-center {
@@ -94,24 +88,23 @@
   }
 
   .contact-form {
-    width: 50%; /* Adjust form width to prevent overflow */
-    max-width: 200px; /* Set max-width for better control */
-    padding: 1rem; /* Reduce padding on smaller screens */
-    box-shadow: none; /* Remove box-shadow for a cleaner look */
-    margin: 0 0; /* Center the form */
+    width: 50%;
+    max-width: 200px;
+    padding: 1rem;
+    box-shadow: none;
+    margin: 0 0;
   }
 
   .contact-form input,
   .contact-form textarea {
-    padding: 0.75rem; /* Adjust padding for input fields */
+    padding: 0.75rem;
   }
 
   .contact-form button {
-    padding: 0.75rem; /* Adjust padding for button */
+    padding: 0.75rem;
   }
 }
 
-/* Animation Styling */
 [data-aos="fade-right"] {
   transform: translateX(-100px);
   opacity: 0;

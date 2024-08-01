@@ -11,11 +11,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    to right,
-    #4f46e5,
-    #696ce5
-  ); /* Adjusted gradient for better contrast */
+  background: linear-gradient(to right, #4f46e5, #696ce5);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;

@@ -1,9 +1,5 @@
 #services {
-  background: linear-gradient(
-    to right,
-    #f0f4f8,
-    #e5e7f6
-  ); /* Light gradient for subtle visual appeal */
+  background: linear-gradient(to right, #f0f4f8, #e5e7f6);
 }
 
 .service-card {
@@ -20,11 +16,7 @@
   left: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(
-    to right,
-    #4f46e5,
-    #6d28d9
-  ); /* Gradient matching hero section */
+  background: linear-gradient(to right, #4f46e5, #6d28d9);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease-in-out;
@@ -32,12 +24,12 @@
 }
 
 h2 {
-  color: #1f2937; /* Dark text for better readability */
+  color: #1f2937;
 }
 
 .service-card h3,
 .service-card p {
-  color: #1f2937; /* Consistent text color */
+  color: #1f2937;
 }
 
 .service-card:hover::before {
