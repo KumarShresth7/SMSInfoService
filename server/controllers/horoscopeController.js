@@ -12,11 +12,11 @@ const sendHoroscopeUpdate = async (req, res) => {
 
     const horoscopeData = await fetchHoroscope(sign, day, category, language);
 
-    if (!horoscopeData || !horoscopeData.horoscope) {
+    if (!horoscopeData || !horoscopeData[category]) {
       return res.status(500).json({ error: 'Invalid horoscope data structure' });
     }
 
-    const message = `Horoscope for ${sign} (${day}): ${horoscopeData.horoscope}`;
+    const message = `Horoscope for ${sign} (${day}): ${horoscopeData[category].join(' ')}`;
 
     const users = await User.find({ services: 'horoscope' });
     if (users.length === 0) {
