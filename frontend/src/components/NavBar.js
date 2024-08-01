@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link as useLocation, useNavigate } from 'react-router-dom';
-import { Link as scroller } from 'react-scroll';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link as ScrollLink } from 'react-scroll';
 import original from "../assets/original.png";
 import './Navbar.css';
 
@@ -16,7 +16,7 @@ const Navbar = () => {
     if (!isLandingPage) {
       navigate('/', { state: { scrollTo: section } });
     } else {
-      scroller.scrollTo(section, {
+      ScrollLink.scrollTo(section, {
         duration: 500,
         delay: 0,
         smooth: 'easeInOutQuart',
