@@ -147,7 +147,7 @@ const Register = () => {
               </div>
               {formData.categories.horoscope && (
                 <div className="mt-2">
-                  <label htmlFor="horoscopeName" className="block text-gray-700">Zodiac Signs</label>
+                  <label htmlFor="horoscopeName" className="block text-gray-700">Horoscope Name</label>
                   <input
                     type="text"
                     name="horoscopeName"

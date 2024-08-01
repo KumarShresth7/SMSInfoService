@@ -1,11 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import backvideo from "../assets/backvideo.mp4";
-import './Hero.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import ai from "../assets/ai.jpg";
+import './Hero.css';  // Ensure the path to your CSS file is correct
 
 const Hero = () => {
   const navigate = useNavigate();

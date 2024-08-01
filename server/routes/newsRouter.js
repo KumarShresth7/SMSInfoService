@@ -1,7 +1,7 @@
 const express = require('express')
-const { headlines } = require('../controllers/newsController')
+const { sendNewsUpdate } = require('../controllers/newsController')
 const router = express.Router()
 
-router.get('/headlines',headlines)
+router.get('/headlines',sendNewsUpdate)
 
 module.exports = router
