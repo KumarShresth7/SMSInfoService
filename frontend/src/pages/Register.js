@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -8,11 +9,11 @@ const Register = () => {
     address: '',
     pinCode: '',
     categories: {
-      healthcare: false,
+      news: false,
       weather: false,
-      publicServices: false,
+      horoscope: false,
     },
-    language: 'english',
+    language: 'en',
   });
 
   const handleChange = (e) => {
@@ -38,10 +39,22 @@ const Register = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // form ka submission logic, idhar add karna haii
-    console.log(formData);
+    try {
+      const services = Object.keys(formData.categories).filter(
+        (category) => formData.categories[category]
+      );
+      const response = await axios.post('http://localhost:5000/api/users/subscribe', {
+        ...formData,
+        services,
+      });
+      console.log(response.data);
+      // Handle successful registration (e.g., display a success message or redirect)
+    } catch (error) {
+      console.error('Failed to register user:', error);
+      // Handle registration error (e.g., display an error message)
+    }
   };
 
   return (
@@ -51,8 +64,6 @@ const Register = () => {
         <h2 className="text-center text-3xl font-extrabold text-indigo-700">Register</h2>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
-
-            {/* columns add and remove honge abhi after kal ki meet */}
 
             {/* Name Column */}
             <div>
@@ -117,14 +128,14 @@ const Register = () => {
                 <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    name="healthcare"
-                    checked={formData.categories.healthcare}
+                    name="news"
+                    checked={formData.categories.news}
                     onChange={handleChange}
                     className="form-checkbox h-5 w-5 text-indigo-600"
                   />
-                  <span className="ml-2 text-gray-700">Healthcare</span>
+                  <span className="ml-2 text-gray-700">News</span>
                 </label>
-                <label className="inline-flex items-center ">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
                     name="weather"
@@ -134,20 +145,20 @@ const Register = () => {
                   />
                   <span className="ml-2 text-gray-700">Weather</span>
                 </label>
-                <label className="inline-flex items-center ">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    name="publicServices"
-                    checked={formData.categories.publicServices}
+                    name="horoscope"
+                    checked={formData.categories.horoscope}
                     onChange={handleChange}
                     className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
                   />
-                  <span className="ml-2 text-gray-700">Public Services</span>
+                  <span className="ml-2 text-gray-700">Horoscope</span>
                 </label>
               </div>
             </fieldset>
 
-            {/* Language decide karke, yahan change karenge */}
+            {/* Language */}
             <fieldset>
               <legend className="block text-gray-700">Language</legend>
               <div className="space-y-2 mt-2">
@@ -155,8 +166,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="english"
-                    checked={formData.language === 'english'}
+                    value="en"
+                    checked={formData.language === 'en'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600"
                   />
@@ -166,8 +177,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="spanish"
-                    checked={formData.language === 'hindi'}
+                    value="hi"
+                    checked={formData.language === 'hi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
@@ -177,8 +188,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="french"
-                    checked={formData.language === 'punjabi'}
+                    value="pun"
+                    checked={formData.language === 'pun'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
