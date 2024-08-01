@@ -14,7 +14,6 @@ const Contact = () => {
       <div className="container mx-auto text-center">
         <h2 className="text-4xl font-bold mb-8 text-indigo-700">Contact Us</h2>
         <div className="flex flex-col lg:flex-row justify-center items-start lg:space-x-16">
-          {/* Contact Details */}
           <div data-aos="fade-right" className="contact-details mb-12 lg:mb-0">
             <div className="flex items-center mb-6">
               <FaMapMarkerAlt className="text-indigo-700 text-2xl mr-4" />
@@ -32,7 +31,6 @@ const Contact = () => {
               <p className="text-lg text-gray-700">contact@notifygenie.com</p>
             </div>
           </div>
-          {/* Contact Form */}
           <div data-aos="fade-left" className="contact-form w-full lg:w-1/2 bg-white p-8 rounded-lg shadow-lg">
             <form>
               <div className="mb-4">

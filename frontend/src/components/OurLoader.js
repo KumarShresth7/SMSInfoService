@@ -1,6 +1,6 @@
 import React from 'react';
 import './OurLoader.css';
-import notificationBell from '../assets/notification-bell.svg'; // Adjust the path as needed
+import notificationBell from '../assets/notification-bell.svg';
 
 const OurLoader = () => {
     return (

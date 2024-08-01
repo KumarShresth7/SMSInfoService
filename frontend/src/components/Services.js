@@ -1,9 +1,9 @@
 import React from 'react';
-import ServiceCard from './ServiceCard'; // Import the ServiceCard component
-import health from '../assets/health.svg';
+import ServiceCard from './ServiceCard';
+import horoscope from '../assets/horoscope.svg';
 import weather from '../assets/weather.svg';
 import news from '../assets/news.svg';
-import './Services.css'; // Import the CSS file
+import './Services.css';
 
 const Services = () => {
   return (
@@ -11,11 +11,10 @@ const Services = () => {
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold mb-12 text-center text-gray-900">Our Services</h2>
         <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center">
-          {/* Service Cards */}
           <ServiceCard
-            serviceName="Healthcare Updates"
-            serviceDescription="Receive timely updates on healthcare services, including health advisories, vaccination information, and more."
-            imageUrl={health}
+            serviceName="Horoscope Updates"
+            serviceDescription="Stay updated with daily horoscope predictions to plan your day according to the stars."
+            imageUrl={horoscope}
           />
           <ServiceCard
             serviceName="Weather Alerts"
@@ -23,8 +22,8 @@ const Services = () => {
             imageUrl={weather}
           />
           <ServiceCard
-            serviceName="Public Service Notifications"
-            serviceDescription="Get notifications on important public services such as emergency alerts, government announcements, and community events."
+            serviceName="News Updates"
+            serviceDescription="Get the latest news updates, including breaking news, top stories, and in-depth analysis."
             imageUrl={news}
           />
         </div>

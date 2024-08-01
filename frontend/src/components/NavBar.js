@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink, scroller } from 'react-scroll';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { Link as scroller } from 'react-scroll';
 import original from "../assets/original.png";
 import './Navbar.css';
 
@@ -29,13 +29,12 @@ const Navbar = () => {
     <nav className="navbar fixed z-10 top-0 left-0 w-full bg-gradient-to-r from-indigo-600 to-indigo-800 text-white py-4 px-6 lg:px-16 shadow-lg transition-shadow duration-300 ease-in-out">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center animate-fade-in">
-          <img src={original} alt="Logo" className="h-12 mr-4 transition-transform transform hover:scale-110" />
+          <img src={original} alt="Logo" className="h-12 w-12 mr-4 transition-transform transform hover:scale-110" />
           <h1 className="text-3xl transition-transform transform hover:scale-110">
             <span className="text-notify">Notify</span><span className="text-genie">Genie</span>
           </h1>
         </div>
 
-        {/* navigation links */}
         <div className="hidden md:flex space-x-6">
           <span
             onClick={() => handleNavClick('home')}
@@ -81,9 +80,8 @@ const Navbar = () => {
           </span>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
-          <button onClick={toggleMenu} className="text-lg hover:text-indigo-200 transition-transform transform">
+          <button onClick={toggleMenu} className="text-lg hover:text-indigo-200 transition-transform transform" aria-label="Menu">
             <svg
               className="w-6 h-6 transition-transform transform hover:rotate-90"
               fill="none"
@@ -97,10 +95,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu idhar se start hai */}
       <div className={`md:hidden fixed inset-0 bg-gray-800 bg-opacity-90 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-20`}>
         <div className="flex justify-end p-6">
-          <button onClick={toggleMenu} className="text-white text-2xl">
+          <button onClick={toggleMenu} className="text-white text-2xl" aria-label="Menu">
             <svg
               className="w-6 h-6 transition-transform transform hover:rotate-90"
               fill="none"

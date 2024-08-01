@@ -119,18 +119,17 @@ const Testimonial = () => {
     dots: false,
     infinite: true,
     speed: 4000,
-    slidesToShow: 1,  // Display one slide at a time
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000, // Adjust speed if necessary
-    vertical: false,  // Horizontal scroll for mobile view
+    autoplaySpeed: 2000,
+    vertical: false,
     arrows: false,
     rows: 1,
     cssEase: 'linear',
     pauseOnHover: false,
   };
 
-  // Determine the screen size
   const isMobile = window.innerWidth <= 768;
 
   return (

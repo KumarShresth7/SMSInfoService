@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { scroller } from 'react-scroll';
-import teamPhoto from '../assets/team.jpg'; // Make sure to replace with the actual path to your team photo
-import './About.css'; // Add this for custom styles
+import teamPhoto from '../assets/team.jpg';
+import './About.css';
 import shresth from '../assets/shresth.png';
 import rachit from '../assets/rachit.png';
 import ananya from '../assets/ananya.jpeg';
@@ -15,13 +15,13 @@ const About = () => {
       duration: 800,
       offset: 100,
       easing: 'ease-in-out',
-      once: false
+      once: false,
     });
   }, []);
 
   const handleContactUsClick = () => {
     scroller.scrollTo('contact', {
-      duration: 1500, // Adjust duration for smoother scrolling
+      duration: 1500,
       delay: 0,
       smooth: 'easeInOutQuart',
     });
@@ -32,7 +32,6 @@ const About = () => {
       <div className="container mx-auto px-6 lg:px-16">
         <h2 className="text-3xl font-bold mb-6 text-center text-indigo-700">About Us</h2>
 
-        {/* Company Overview */}
         <div className="flex flex-col lg:flex-row items-center mb-12">
           <div className="lg:w-1/2 mb-8 lg:mb-0">
             <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Our Story</h3>
@@ -41,11 +40,10 @@ const About = () => {
             </p>
           </div>
           <div className="lg:w-1/2 lg:pl-12">
-            <img src={teamPhoto} alt="Our Team" className="rounded-lg shadow-lg" />
+            <img src={teamPhoto} alt="Our Team" className="w-full h-auto max-w-xs lg:max-w-md rounded-lg shadow-lg" />
           </div>
         </div>
 
-        {/* Mission Statement */}
         <div className="text-center mb-12">
           <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Our Mission</h3>
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -53,11 +51,9 @@ const About = () => {
           </p>
         </div>
 
-        {/* Team Introduction */}
         <div className="text-center mb-12" data-aos="fade-up">
           <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Meet Our Team</h3>
           <div className="flex flex-wrap justify-center">
-            {/* Team Member */}
             <div className="w-full sm:w-1/2 lg:w-1/4 p-4" data-aos="fade-up" data-aos-delay="100">
               <div className="bg-white p-6 rounded-lg shadow-lg team-member">
                 <img src={shresth} alt="Shresth" className="w-24 h-24 mx-auto rounded-full mb-4" />
@@ -89,7 +85,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
         <div className="text-center">
           <h3 className="text-2xl font-semibold mb-4 text-indigo-600">Join Us</h3>
           <p className="text-lg text-gray-700 leading-relaxed mb-4">

@@ -1,55 +1,40 @@
+/* Hero.css */
 #hero {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
-    background-color: #f7fafc;
-  }
-  
-  .text-block {
-    margin-bottom: 2rem;
-    text-align: center;
-  }
-  
-  .image-block img {
-    width: 100%;
-    height: auto;
-  }
-  
-  #home {
-    position: relative;
-  }
-  .hero-section {
-    position: relative;
-    z-index: 1; /* Lower than the navbar */
-  }
-  #cursor, #cursor-blur {
-    position: absolute;
-    z-index: 10; /* Ensure the cursor is above the hero content but below the text */
-  }
-  #cursor {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    z-index: 1000; /* Ensure it is above other elements */
-  }
-  
-  #cursor-blur {
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: rgba(254, 252, 252, 0.947);
-    border-radius: 50%;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    filter: blur(100px);
-    z-index: 999; /* Just below cursor */
-  }
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background-color: #f7fafc;
+}
 
-  #home .textside {
-    z-index: 10; /* Make sure text is above cursor effects */
-  }
+.text-block {
+  margin-bottom: 2rem;
+  text-align: center;
+}
 
-  /* filter: blur(250px); */
+.image-block img {
+  width: 100%;
+  height: auto;
+}
+
+#home {
+  position: relative;
+}
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+#cursor-blur {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: rgba(254, 252, 252, 0.947);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  filter: blur(100px);
+  z-index: 999;
+}
+
+#home .textside {
+  z-index: 10;
+}

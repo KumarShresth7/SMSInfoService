@@ -1,9 +1,8 @@
-/* Combined Divider Style */
 .combined-divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0; /* Adjust as needed for spacing */
+  margin: 2rem 0;
 }
 
 .combined-divider::before,
@@ -11,10 +10,10 @@
   content: "";
   flex: 1;
   height: 1px;
-  background-color: #4f46e5; /* Indigo-700 */
+  background-color: #4f46e5;
 }
 
 .combined-divider img {
-  width: 50px; /* Adjust size as needed */
-  margin: 0 1rem; /* Spacing between line and graphic */
+  width: 50px;
+  margin: 0 1rem;
 }
