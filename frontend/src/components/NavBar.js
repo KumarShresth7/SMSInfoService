@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Link as ScrollLink } from 'react-scroll';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 import original from "../assets/original.png";
 import './Navbar.css';
 
@@ -16,7 +16,7 @@ const Navbar = () => {
     if (!isLandingPage) {
       navigate('/', { state: { scrollTo: section } });
     } else {
-      ScrollLink.scrollTo(section, {
+      scroller.scrollTo(section, {
         duration: 500,
         delay: 0,
         smooth: 'easeInOutQuart',
@@ -97,7 +97,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu idhar se start hai*/}
+      {/* Mobile menu idhar se start hai */}
       <div className={`md:hidden fixed inset-0 bg-gray-800 bg-opacity-90 transition-transform transform ${isOpen ? 'translate-x-0' : 'translate-x-full'} z-20`}>
         <div className="flex justify-end p-6">
           <button onClick={toggleMenu} className="text-white text-2xl">
