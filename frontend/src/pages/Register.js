@@ -8,10 +8,11 @@ const Register = () => {
     address: '',
     pinCode: '',
     categories: {
-      healthcare: false,
+      horoscope: false,
       weather: false,
-      publicServices: false,
+      news: false,
     },
+    horoscopeName: '',
     language: 'english',
   });
 
@@ -24,6 +25,7 @@ const Register = () => {
           ...prevData.categories,
           [name]: checked,
         },
+        horoscopeName: name === 'horoscope' && !checked ? '' : prevData.horoscopeName,
       }));
     } else if (type === 'radio') {
       setFormData((prevData) => ({
@@ -40,7 +42,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // form ka submission logic, idhar add karna haii
+    // form submission logic goes here
     console.log(formData);
   };
 
@@ -51,8 +53,6 @@ const Register = () => {
         <h2 className="text-center text-3xl font-extrabold text-indigo-700">Register</h2>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
-
-            {/* columns add and remove honge abhi after kal ki meet */}
 
             {/* Name Column */}
             <div>
@@ -113,41 +113,55 @@ const Register = () => {
             {/* Categories */}
             <fieldset>
               <legend className="block text-gray-700">Categories</legend>
-              <div className="space-y-2 mt-2">
+              <div className="flex items-center space-x-4 mt-2">
                 <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    name="healthcare"
-                    checked={formData.categories.healthcare}
+                    name="horoscope"
+                    checked={formData.categories.horoscope}
                     onChange={handleChange}
                     className="form-checkbox h-5 w-5 text-indigo-600"
                   />
-                  <span className="ml-2 text-gray-700">Healthcare</span>
+                  <span className="ml-2 text-gray-700">Horoscope</span>
                 </label>
-                <label className="inline-flex items-center ">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
                     name="weather"
                     checked={formData.categories.weather}
                     onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
+                    className="form-checkbox h-5 w-5 text-indigo-600"
                   />
                   <span className="ml-2 text-gray-700">Weather</span>
                 </label>
-                <label className="inline-flex items-center ">
+                <label className="inline-flex items-center">
                   <input
                     type="checkbox"
-                    name="publicServices"
-                    checked={formData.categories.publicServices}
+                    name="news"
+                    checked={formData.categories.news}
                     onChange={handleChange}
-                    className="form-checkbox h-5 w-5 text-indigo-600 ml-2"
+                    className="form-checkbox h-5 w-5 text-indigo-600"
                   />
-                  <span className="ml-2 text-gray-700">Public Services</span>
+                  <span className="ml-2 text-gray-700">News</span>
                 </label>
               </div>
+              {formData.categories.horoscope && (
+                <div className="mt-2">
+                  <label htmlFor="horoscopeName" className="block text-gray-700">Zodiac Signs</label>
+                  <input
+                    type="text"
+                    name="horoscopeName"
+                    id="horoscopeName"
+                    value={formData.horoscopeName}
+                    onChange={handleChange}
+                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    required
+                  />
+                </div>
+              )}
             </fieldset>
 
-            {/* Language decide karke, yahan change karenge */}
+            {/* Language */}
             <fieldset>
               <legend className="block text-gray-700">Language</legend>
               <div className="space-y-2 mt-2">
@@ -166,8 +180,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="spanish"
-                    checked={formData.language === 'spanish'}
+                    value="hindi"
+                    checked={formData.language === 'hindi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />
@@ -177,8 +191,8 @@ const Register = () => {
                   <input
                     type="radio"
                     name="language"
-                    value="french"
-                    checked={formData.language === 'french'}
+                    value="punjabi"
+                    checked={formData.language === 'punjabi'}
                     onChange={handleChange}
                     className="form-radio h-5 w-5 text-indigo-600 ml-2"
                   />

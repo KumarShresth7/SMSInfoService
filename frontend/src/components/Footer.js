@@ -26,10 +26,10 @@ const Footer = () => {
             <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
               <FaTwitter size={24} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
+            <a href="https://www.instagram.com/k.shresth_?igsh=aGY0czI3Ynk1Y3dr" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
               <FaInstagram size={24} />
             </a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
+            <a href="https://www.linkedin.com/in/kumar-shresth-3a743b171" target="_blank" rel="noopener noreferrer" className="text-white hover:text-gray-200">
               <FaLinkedin size={24} />
             </a>
           </div>

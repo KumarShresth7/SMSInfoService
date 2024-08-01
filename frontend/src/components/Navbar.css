@@ -10,6 +10,28 @@
   z-index: 10;
 }
 
+/* Common styles for navbar */
+.navbar {
+  background: transparent; /* Default background */
+  transition: background-color 0.5s ease-in-out; /* Smooth background color transition */
+}
+
+/* Styles for gradient background on non-landing pages */
+.navbar.bg-gradient {
+  background: linear-gradient(to right, #c084fc, #8b5cf6); /* Default gradient background */
+}
+
+/* Styles for gradient background on the login page */
+.navbar.bg-gradient-login {
+  background: linear-gradient(to right, #4f46e5, #312e81); /* Gradient specific for login page */
+}
+
+/* Styles for mobile menu */
+.mobile-menu {
+  background: rgba(31, 41, 55, 0.9); /* Darker background for mobile menu */
+}
+
+
 .animate-fade-in {
   animation: fadeIn 1s ease-in-out;
 }

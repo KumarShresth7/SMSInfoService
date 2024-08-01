@@ -15,20 +15,28 @@ const Navbar = () => {
   const isLandingPage = location.pathname === '/';
 
   useEffect(() => {
-    // GSAP animation for background color change on scroll
-    gsap.to(".navbar", {
-      background: "linear-gradient(to right, #4f46e5, #312e81)",
-      duration: 0.5,
-      scrollTrigger: {
-        trigger: ".navbar",
-        start: "top -15%",
-        end: "top -16%",
-        scrub: 1,
-        markers: false,
-        toggleActions: "play none none reverse", // Optional
-      },
-    });
-  }, []);
+    if (isLandingPage) {
+      // GSAP animation for background color change on scroll
+      const animation = gsap.to(".navbar", {
+        background: "linear-gradient(to right, #4f46e5, #312e81)",
+        duration: 0.5,
+        scrollTrigger: {
+          trigger: ".navbar",
+          start: "top -15%",
+          end: "top -16%",
+          scrub: 1,
+          markers: false,
+          toggleActions: "play none none reverse",
+        },
+      });
+
+      // Cleanup function to remove GSAP animation
+      return () => {
+        animation.scrollTrigger.kill();
+        animation.kill();
+      };
+    }
+  }, [isLandingPage]);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
@@ -46,7 +54,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="navbar fixed w-full text-white py-4 px-6 lg:px-16 shadow-lg transition-shadow duration-300 ease-in-out">
+    <nav className={`navbar fixed w-full text-white py-4 px-6 lg:px-16 shadow-lg transition-shadow duration-300 ease-in-out ${isLandingPage ? 'bg-transparent' : 'bg-gradient-to-r from-indigo-600 to-indigo-900'}`}>
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center animate-fade-in">
           <img src={original} alt="Logo" className="h-12 mr-4 transition-transform transform hover:scale-110" />
@@ -55,7 +63,7 @@ const Navbar = () => {
           </h1>
         </div>
 
-        {/* navigation links */}
+        {/* Navigation links */}
         <div className="hidden md:flex space-x-6">
           <span
             onClick={() => handleNavClick('home')}
