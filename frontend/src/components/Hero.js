@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ai from "../assets/ai.jpg";
+import backvideo from "../assets/backvideo.mp4";
+import { gsap } from 'gsap';
 import './Hero.css';  // Ensure the path to your CSS file is correct
 
 const Hero = () => {
